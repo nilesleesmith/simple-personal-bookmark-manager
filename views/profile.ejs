@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Personal Bookmark Manager</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <h1>My Bookmarks</h1>
+    <p><%= user.local.email %></p>
+    <p><a href="/logout">Logout</a></p>
+
+    <% if (bookmarkMessage.length > 0) { %>
+      <p><%= bookmarkMessage[0] %></p>
+    <% } %>
+
+    <h2>Add a bookmark</h2>
+    <form action="/bookmarks" method="POST">
+      <p><label>Title <input type="text" name="title"></label></p>
+      <p><label>URL <input type="text" name="url"></label></p>
+      <button type="submit">Save Bookmark</button>
+    </form>
+
+    <h2>Saved Bookmarks</h2>
+    <ul>
+      <% for (var i = 0; i < bookmarks.length; i++) { %>
+        <li>
+          <a href="<%= bookmarks[i].url %>"><%= bookmarks[i].title %></a>
+          <a href="/bookmarks/<%= bookmarks[i]._id %>/edit">Edit</a>
+          <form action="/bookmarks/<%= bookmarks[i]._id %>/delete" method="POST">
+            <button type="submit">Delete</button>
+          </form>
+        </li>
+      <% } %>
+    </ul>
+  </body>
+</html>
