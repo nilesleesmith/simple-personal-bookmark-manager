@@ -98,4 +98,4 @@ https://simple-personal-bookmark-manager.onrender.com
 
 ## Screenshots
 
-Coming soon! Desktop, tablet, and mobile screenshots will be added here.
+![Simple Personal Bookmark Manager desktop view](./screenshots/simple-personal-bookmark-manager-desktop.png)
